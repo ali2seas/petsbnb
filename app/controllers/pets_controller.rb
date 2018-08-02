@@ -42,8 +42,10 @@ class PetsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  private
-  def pet_params
-    params.require(:pet).permit(:name, :address, :age, :category, :size)
-  end
+ private
+ def pet_params
+   params.require(:pet).permit(:name, :address, :age, :category, :size)
+ end
+
+
 end

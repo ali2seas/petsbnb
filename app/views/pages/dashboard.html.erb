@@ -1,0 +1,31 @@
+<h1><%= current_user.first_name %> <%= current_user.last_name %> </h1>
+<h3>User description </h3>
+<h1>Your bookings: </h1>
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Till</th>
+      <th>Buddy's name</th>
+       <th>Breed</th>
+      <th>Address</th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Booking.all.each do |booking| %>
+      <tr>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= booking.pet.name %></td>
+         <td><%= booking.pet.category %></td>
+        <td><%= booking.pet.address %></td>
+        <td><%= booking.pet.user.first_name %></td>
+        <td><%= booking.pet.user.last_name %></td>
+<% end %>
+  </tbody>
+</table>
+
+<br>
