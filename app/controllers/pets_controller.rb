@@ -41,8 +41,8 @@ class PetsController < ApplicationController
     @pet.destroy
   end
 
-  private
-  def pet_params
-    params.require(:pet).permit(:start_date, :end_date)
-  end
+ private
+ def pet_params
+   params.require(:pet).permit(:name, :address, :age, :category, :size)
+ end
 end

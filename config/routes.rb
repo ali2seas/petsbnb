@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:edit, :update] do
     resources :reviews, only: [:new, :create]
   end
-  get '/dashboard', to: 'bookings#index'
+  get 'dashboard', to: 'pages#dashboard'
 
 end
