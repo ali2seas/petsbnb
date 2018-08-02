@@ -1,0 +1,22 @@
+// Specific CSS for your home-page
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+.content {
+  display: flex;
+}
+
+.cards-container-map {
+  flex: 1;
+}
+
+.row-map {
+  padding: 0px 30px;
+}
+
+h3 {
+  padding-bottom: 20px;
+}
