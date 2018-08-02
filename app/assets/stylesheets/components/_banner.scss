@@ -1,3 +1,7 @@
+#home-banner {
+  height: calc(100vh - 70px);
+}
+
 .banner {
   color: white;
   text-align: center;
@@ -9,11 +13,21 @@
   align-items: center;
   justify-content: center;
 }
+
 .banner h1 {
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 500;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
+.banner h3 {
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+
 .banner p {
   font-size: 25px;
   font-weight: lighter;
