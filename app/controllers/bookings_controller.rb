@@ -1,13 +1,13 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = policy_scope(Booking)
+    @booking = Booking.all
   end
-  
+
   def new
     @booking = Booking.new
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -25,7 +25,6 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    authorize @booking
     if @booking.update(booking_params)
       redirect_to dashboard_path
     else
@@ -37,5 +36,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-  
 end
