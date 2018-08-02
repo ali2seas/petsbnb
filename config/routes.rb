@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   get '/dashboard', to: 'bookings#index'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
+  get '/faq', to: 'pages#faq'
 
 end
