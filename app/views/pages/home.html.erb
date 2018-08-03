@@ -18,35 +18,36 @@
   </div>
 </div>
 
-
-<div id="about-home" class="wrapper">
-  <div class="container">
-    <div class="col-md-offset-1 col-md-10 container">
-      <h2>What is this weird website?</h2>
-       <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
-    </div>
-  </div>
-</div>
-
-<div class="container" id="home-pets">
-  <h2 class="text-center">Recent Pets</h2>
-  <div class="row">
-    <% @pets.each do |pet| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6138d4bb4d3515092f3379fb64fbbb00&auto=format&fit=crop&w=1050&q=80');">
-        <div class="card-description">
-          <h2><%= pet.name %></h2>
-          <p>Category: <%= pet.category %></p>
-          <p>Age: <%= pet.age %></p>
-          <p>Size: <%= pet.size %></p>
-        </div>
-        <%= link_to "", pet_path(pet), class: 'card-link' %>
+<div class="wrapper">
+  <div id="about-home">
+    <div class="container">
+      <div class="col-md-offset-1 col-md-10 container">
+        <h2>What is this weird website?</h2>
+         <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
       </div>
     </div>
-    <% end %>
   </div>
-  <div id="homepage-button" class="text-center">
-    <a class="btn btn-primary btn-lg" href="/pets/" role="button">View More Pets</a>
+
+  <div class="container" id="home-pets">
+    <h2 class="text-center">Recent Pets</h2>
+    <div class="row">
+      <% @pets.each do |pet| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6138d4bb4d3515092f3379fb64fbbb00&auto=format&fit=crop&w=1050&q=80');">
+          <div class="card-description">
+            <h2><%= pet.name %></h2>
+            <p>Category: <%= pet.category %></p>
+            <p>Age: <%= pet.age %></p>
+            <p>Size: <%= pet.size %></p>
+          </div>
+          <%= link_to "", pet_path(pet), class: 'card-link' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div id="homepage-button" class="text-center">
+      <a class="btn btn-primary btn-lg" href="/pets/" role="button">View More Pets</a>
+    </div>
   </div>
 </div>
 
