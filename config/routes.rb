@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :pets do
     resources :bookings, only: [:new, :create]
   end
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
 
- 
+
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
   get '/faq', to: 'pages#faq'
