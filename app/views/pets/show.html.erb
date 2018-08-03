@@ -13,20 +13,25 @@
       <div class="col-md-6">
         <img src="https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6138d4bb4d3515092f3379fb64fbbb00&auto=format&fit=crop&w=1050&q=80" height="300" width="450">
       </div>
-      <div class="col-md-6">
-        <h2><%= @pet.name %></h2>
-        <p><strong>Address:</strong> <%= @pet.address %></p>
-        <p><strong>Category:</strong> <%= @pet.category %></p>
-        <p><strong>Age:</strong> <%= @pet.age %></p>
-        <p><strong>Size:</strong> <%= @pet.size %></p>
+        <div class="col-md-6">
+          <h2><%= @pet.name %></h2>
+          <p><strong>Address:</strong> <%= @pet.address %></p>
+          <p><strong>Category:</strong> <%= @pet.category %></p>
+          <p><strong>Age:</strong> <%= @pet.age %></p>
+          <p><strong>Size:</strong> <%= @pet.size %></p>
+        </div>
+        <div class="col-md-6 box">
+          <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
+          <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
+          <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </div>
       </div>
-      <div class="col-md-6 box">
-        <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
-        <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
-      </div>
-      <div class="col-md-12 booking-button">
-        <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
-      </div>
+
     </div>
+
 </div>
+      <div class="home-link col-md-offset-3 col-md-6 text-center">
+        <%= link_to "Back to all pets", pets_path %>
+      </div>
+
 </div>
