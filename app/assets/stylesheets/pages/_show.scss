@@ -1,7 +1,9 @@
 .box {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-top: 20px
+
 }
 .photo {
   background: blue;
@@ -14,6 +16,11 @@
 .booking-button {
   display: flex;
   margin: 20px 0;
+}
+
+
+h2 {
+  margin-top: 0;
 }
 
 .user-info {
@@ -45,3 +52,4 @@ hr {
   text-align: center;
 
 }
+
