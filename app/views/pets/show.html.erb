@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-6">
-        <img src="https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6138d4bb4d3515092f3379fb64fbbb00&auto=format&fit=crop&w=1050&q=80" height="300" width="450">
+        <%= image_tag @pet.photo.url %>
       </div>
       <div class="col-md-6">
         <h2><%= @pet.name %></h2>
