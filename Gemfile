@@ -16,11 +16,13 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem "geocoder"
-gem 'faker'
-gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem "geocoder"
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
