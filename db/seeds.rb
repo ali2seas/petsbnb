@@ -26,6 +26,7 @@ user = User.new(
     size: Faker::Dog.size,
     user_id: User.last.id
     )
+    pet.remote_photo_url = "https://dog.ceo/api/breeds/image/random"
     pet.save!
 
       booking = Booking.new(
