@@ -8,3 +8,6 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'bootstrap';
 console.log('Hello World from Webpacker')
+import { initMap } from '../components/map';
+initMap();
+console.log('Hello World from Geocoder')

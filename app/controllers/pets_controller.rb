@@ -3,6 +3,14 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    @pets = Pet.where.not(latitude: nil, longitude: nil)
+
+    @markers = @pets.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
   end
 
   def show
