@@ -16,6 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'carrierwave', '~> 1.2'
+gem 'faker'
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
