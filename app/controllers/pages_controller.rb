@@ -5,10 +5,6 @@ class PagesController < ApplicationController
     @pets = Pet.first(3)
   end
 
-
   def dashboard
   end
-=======
-
-
 end
