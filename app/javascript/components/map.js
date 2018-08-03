@@ -3,7 +3,7 @@ import GMaps from 'gmaps/gmaps.js';
 function initMap() {
   const mapElement = document.getElementById('map');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
-    const map = new GMaps({ el: mapElement, lat: 0, lng: 0 });
+    const map = new GMaps({ el: mapElement, lat: 37, lng: -97 });
     const markers = JSON.parse(mapElement.dataset.markers);
     map.addMarkers(markers);
     if (markers.length === 0) {
@@ -12,7 +12,7 @@ function initMap() {
       map.setCenter(markers[0].lat, markers[0].lng);
       map.setZoom(14);
     } else {
-      map.fitLatLngBounds(markers);
+      map.setZoom(3);
     }
   }
 }

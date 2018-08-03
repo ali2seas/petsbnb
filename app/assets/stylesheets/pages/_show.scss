@@ -5,6 +5,9 @@
   padding-top: 20px
 
 }
+.photo {
+  background: blue;
+}
 
 .button {
   padding: 5px 40px;
@@ -15,8 +18,38 @@
   margin: 20px 0;
 }
 
+
 h2 {
   margin-top: 0;
 }
 
+.user-info {
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 250px;
+}
+
+
+.user-background {
+  background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/light-blue-tech-geometric-polygonal-motion-background-video-corporate-animation-hd-1920x1080_nde0ffkig__F0000.png);
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+}
+
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.user-card {
+  border: 1px solid #eee;
+  text-align: center;
+
+}
 
