@@ -14,11 +14,16 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <%= current_user.email %>
+        <%= current_user.first_name %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to user_path(current_user) do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <%= link_to dashboard_path(current_user) do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_pet_path do %>
+              <i class="fas fa-plus"></i><%= t(".profile", default: "Add a pet") %>
             <% end %>
           </li>
           <li>
@@ -28,7 +33,7 @@
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <i class="fas fa-sign-in-alt"></i></i>  <%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>
         </ul>
