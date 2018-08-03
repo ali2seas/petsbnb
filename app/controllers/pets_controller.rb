@@ -3,6 +3,15 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    @pets = Pet.where.not(latitude: nil, longitude: nil)
+
+    @markers = @pets.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
 
@@ -46,7 +55,7 @@ class PetsController < ApplicationController
 
  private
  def pet_params
-   params.require(:pet).permit(:name, :address, :age, :category, :size)
+   params.require(:pet).permit(:name, :address, :age, :category, :size, :photo)
  end
 
 

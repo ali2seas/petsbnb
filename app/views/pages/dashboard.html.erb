@@ -1,9 +1,14 @@
-<h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
-<h5><p>I feel like I was chosen. Baxter chose me. Baxter was beaten and abused in a low-income part of Denver frequented by gangs. He was an abandoned stray. At 6 months old he only weighed 24 pounds. Now he’s 72. I got him at a shelter. I didn’t think he was going to make it. I told the shelter people: ‘I’m taking him.’ It’s what I do. At first I would turn on the radio and he would freak out. It took me two years to get him medically and emotionally well.</p>
-<p>Once, Baxter had nothing. Now, he has everything. “He’s legally the CEO of my foundation, which is named after Wags and Menace, two abused dogs I had. Baxter and I cover 1,000 miles in Colorado, visiting shelters, Boys and Girls Clubs, Boy Scout and Girl Scout groups. We volunteer, raise money and teach. It’s my calling.</p> </h5>
+
+<div class="container">
+  <h2><%= current_user.first_name %> <%= current_user.last_name %> </h2>
+  <img src="http://cdn.facesofopensource.com/wp-content/uploads/2017/02/09202215/linus.faces22052.web_.jpg" class="avatar-square">
+  <div class = user-description> <p>I feel like I was chosen. Baxter chose me. Baxter was beaten and abused in a low-income part of Denver frequented by gangs. He was an abandoned stray. At 6 months old he only weighed 24 pounds. Now he’s 72. I got him at a shelter. I didn’t think he was going to make it. I told the shelter people: ‘I’m taking him.’ It’s what I do. At first I would turn on the radio and he would freak out. It took me two years to get him medically and emotionally well.</p>
+  <p>Once, Baxter had nothing. Now, he has everything. “He’s legally the CEO of my foundation, which is named after Wags and Menace, two abused dogs I had. Baxter and I cover 1,000 miles in Colorado, visiting shelters, Boys and Girls Clubs, Boy Scout and Girl Scout groups. We volunteer, raise money and teach. It’s my calling.</p>
+  </div>
+</div>
 
 <div class="container" id="dashboard-bookings">
-  <h2 class="text-center">Your bookings</h2>
+  <h2>Your bookings</h2>
   <div class="row">
     <% @id = current_user.id %>
     <% bookings = Booking.all.where(user_id: @id) %>
@@ -15,7 +20,7 @@
           <p><%= booking.start_date.to_s(:long) %> - <%= booking.end_date.to_s(:long) %></p>
           <p><%= booking.pet.category %></p>
           <p><%= booking.pet.user.first_name %> <%= booking.pet.user.last_name %></p>
-          <p>rating</p>
+         <!--  <p>rating</p> -->
         </div>
         <%#= link_to "", pet_path(booking.pet), class: 'booking-card-link' %>
       </div>
