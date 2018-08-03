@@ -1,17 +1,19 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = Booking.all
+    @bookings = Booking.all
   end
 
   def new
     @booking = Booking.new
+    @pet = Pet.find(params[:pet_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.pet= Pet.find(params[:pet_id])
+
     if @booking.save
       redirect_to dashboard_path
     else
