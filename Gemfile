@@ -16,9 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem "geocoder"
+gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'carrierwave', '~> 1.2'
-gem 'faker'
 gem 'cloudinary'
 
 group :development do
@@ -33,3 +34,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+
