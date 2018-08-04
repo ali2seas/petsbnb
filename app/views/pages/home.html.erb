@@ -18,13 +18,12 @@
   </div>
 </div>
 
-<<<<<<< HEAD
 <div id="about-home" class="wrapper">
   <div class="container">
     <div class="col-md-offset-1 col-md-10 container">
       <h2>What is this weird website?</h2>
        <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
-=======
+
 <div class="wrapper">
   <div id="about-home">
     <div class="container">
@@ -32,7 +31,6 @@
         <h2 class="homepage">What is this weird website?</h2>
          <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
       </div>
->>>>>>> 9b331ee82c2c92d36f33521a69adeac743d6fc99
     </div>
   </div>
 
@@ -41,12 +39,9 @@
     <div class="row">
       <% @pets.each do |pet| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
+        <div class="card image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
           <div class="card-description">
-            <h2><%= pet.name %></h2>
-            <p>Category: <%= pet.category %></p>
-            <p>Age: <%= pet.age %></p>
-            <p>Size: <%= pet.size %></p>
+            <h2><%= pet.name %> the <%= pet.category %></h2>
           </div>
           <%= link_to "", pet_path(pet), class: 'card-link' %>
         </div>
@@ -58,4 +53,5 @@
     </div>
   </div>
 </div>
+
 

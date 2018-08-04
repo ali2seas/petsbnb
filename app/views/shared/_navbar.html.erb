@@ -5,7 +5,7 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <%= link_to "See our pets", pets_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Meet our pets", pets_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "FAQ", faq_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Contact us", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -13,7 +13,7 @@
   <% if user_signed_in? %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag "https://avatars2.githubusercontent.com/u/19302598?v=4", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <%= current_user.first_name %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
