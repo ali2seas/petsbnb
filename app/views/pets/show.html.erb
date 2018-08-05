@@ -26,8 +26,9 @@
           <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
         </div>
       </div>
-      <div class="col-md-12 text-center back-link">
-        <%= link_to "Back to all pets", pets_path %>
+      <div class="col-md-12 box back-link">
+        <%= link_to "Back to all pets", pets_path, class:"btn btn-warning button" %>
+        <%= link_to "pet Owner", user_path(@pet.user_id), class:"btn btn-warning button" %>
       </div>
     </div>
 </div>
