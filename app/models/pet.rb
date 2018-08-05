@@ -9,5 +9,13 @@ class Pet < ApplicationRecord
   validates :category, presence: true
   validates :age, presence: true
   validates :size, presence: true
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
+
+  def self.next(pet)
+   where("id > ?", pet.id).first
+  end
+
+  def self.prev(pet)
+    where("id < ?", pet.id).last
+  end
 end
