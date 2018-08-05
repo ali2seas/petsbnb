@@ -1,0 +1,130 @@
+.inbox {
+  padding-left: 0px;
+  list-style: none;
+  border: 1px solid rgba(220,224,244,0.4);
+  margin: 0;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.inbox p {
+  color: rgba(0,0,0,0.4);
+  padding: 5 0;
+  margin: 0;
+  }
+
+.inbox h2 {
+  margin: 0;
+  }
+
+.booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding: 10px;
+  background-color: white;
+}
+.booking h3{
+  color: $orange;
+  font-size: 20px;
+  font-weight:bold;
+}
+.booking h4{
+  color: black;
+  font-size: 16px;
+}
+
+.pet-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+.booking-info{
+  flex-grow: 1;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-owner{
+  width: 100px;
+  flex-grow: 1;
+}
+.booking-start{
+  flex-grow: 1;
+}
+
+.booking-end{
+  flex-grow: 1;
+}
+
+.booking-payment{
+  flex-grow: 1;
+}
+
+.booking-payment p{
+  font-weight: bold;
+  padding-top: 15px;
+}
+.booking-changes{
+  flex-grow: 1;
+  padding: 10px;
+}
+.accepted {
+  color: black;
+}
+
+.declined {
+  color: red;
+}
+
+.pending {
+  color: rgb(198, 203, 227);
+}
+
+.column {
+  padding: 10px;
+  border-left: 1px solid rgba(220, 224, 244, 0.4);
+  border-right: 1px solid rgba(220, 224, 244, 0.4);
+}
+.title {
+  padding: 20px;
+
+}
+.side-container {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side-container h3 {
+  size: 24px;
+  color: #F96;
+}
+.fa-star {
+            font-size: 18px;
+            margin: 0 1px;
+            position: relative;
+            top: -1px;
+            &.on {
+                color: $orange;
+            }
+            &.off {
+                color: $gray;
+            }
+        }
+.white-container{
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  text-align: center;
+}
