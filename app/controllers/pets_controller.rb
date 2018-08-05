@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pets = Pet.all
+    @pets = policy_scope(Pet)
     @pets = Pet.where.not(latitude: nil, longitude: nil)
 
     @markers = @pets.map do |pet|
@@ -16,6 +16,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def new
@@ -34,10 +35,12 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+
   end
 
   def update
     @pet = Pet.find(params[:id])
+    authorize @pet
     if @pet.update(pet_params)
       redirect_to dashboard_path
     else
@@ -47,6 +50,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
+    authorize @pet
     @pet.destroy
     redirect_to dashboard_path
   end

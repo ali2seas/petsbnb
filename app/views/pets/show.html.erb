@@ -22,8 +22,12 @@
         </div>
         <div class="col-md-6 box">
           <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
-          <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
-          <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% if policy(@pet).update? %>
+            <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
+          <% end %>
+          <% if policy(@pet).destroy? %>
+            <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% end %>
         </div>
       </div>
       <div class="col-md-12 text-center back-link">

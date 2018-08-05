@@ -17,7 +17,9 @@
               <p>Age: <%= pet.age %></p>
               <p>Size: <%= pet.size %></p>
             </div>
-            <%= link_to "", pet_path(pet), class: 'card-link' %>
+            <% if policy(pet).show? %>
+              <%= link_to "", pet_path(pet), class: 'card-link' %>
+            <% end %>
           </div>
         </div>
       <% end %>
