@@ -11,11 +11,11 @@ class Pet < ApplicationRecord
   validates :size, presence: true
   mount_uploader :photo, PhotoUploader
 
-  def self.next(pet)
-   where("id > ?", pet.id).first
+  def next
+    self.class.where("id > ?", id).first
   end
 
-  def self.prev(pet)
-    where("id < ?", pet.id).last
+  def previous
+    self.class.where("id < ?", id).last
   end
 end

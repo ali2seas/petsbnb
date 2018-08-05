@@ -11,26 +11,59 @@
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-6 card" >
-        <%= cl_image_tag @pet.photo.url, width: 400, height: 400, crop: :fit, class:"card"%>
+        <div class="slider" data-state="0">
+          <svg id="prev" viewBox="0 0 31 101" version="1.1" class="pfeil prev left"><path d="M 0,0 30,50 0,100"></path></svg>
+          <svg id="next" viewBox="0 0 31 101" version="1.1" class="pfeil next left"><path d="M 0,0 30,50 0,100"></path></svg>
+          <div class="status">
+            <div class="stat" data-key="0"></div>
+            <div class="stat" data-key="1"></div>
+            <div class="stat" data-key="2"></div>
+            <div class="stat" data-key="3"></div>
+            </div>
+            <div class="image" data-key="0" >
+              <%= cl_image_tag @pet.photo.url, class:'card', crop: :thumb%>
+            </div>
+            <div class="image" data-key="1">
+              <%= image_tag "https://i.imgur.com/Bt6zrhq.jpg", size:"50" %>
+            </div>
+            <div class="image" data-key="2">
+              <%= image_tag "https://i.imgur.com/zMs8Sx6.jpg", size:"50" %>
+            </div>
+            <div class="image" data-key="3">
+              <%= image_tag "https://i.imgur.com/e9aTxh7.jpg", size:"50" %>
+            </div>
+          </div>
       </div>
-        <div class="col-md-6">
+        <div class="col-md-6 show">
           <h2><%= @pet.name %></h2>
           <p><strong>Address:</strong> <%= @pet.address %></p>
           <p><strong>Category:</strong> <%= @pet.category %></p>
           <p><strong>Age:</strong> <%= @pet.age %></p>
           <p><strong>Size:</strong> <%= @pet.size %></p>
         </div>
-        <div class="col-md-6 box">
+        <div class="col-md-6 col-md-offset-3 box">
           <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
           <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
           <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
         </div>
       </div>
-      <div class="col-md-12 text-center back-link">
-        <%= link_to "Back to all pets", pets_path %>
-        <%= link_to "Previous pet", pet_path(Pet.prev(@pet)) %>
-        <%= link_to "Next pet", pet_path(Pet.next(@pet)) %>
-      </div>
+
     </div>
+  <div class="col-md-12 text-center back-link">
+    <% if @pet.previous %>
+      <div class="btn btn-default">
+        <i class="fas fa-arrow-left"></i><%= link_to " Previous pet", pet_path(@pet.previous) %>
+      </div>
+    <% end %>
+    <div class="btn btn-default">
+      <%= link_to "Back to all pets", pets_path %>
+    </div>
+    <% if @pet.next %>
+      <div class="btn btn-default">
+        <%= link_to "Next pet ", pet_path(@pet.next) %><i class="fas fa-arrow-right"></i>
+      </div>
+    <% end %>
+  </div>
 </div>
-</div>
+
+

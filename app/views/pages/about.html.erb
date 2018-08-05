@@ -1,23 +1,130 @@
+  <!-- This Jumbotron is used to display the Company name and description -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1494947665470-20322015e3a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8e64be3b9dcb29b57f6034eeccc6561e&auto=format&fit=crop&w=1950&q=80');">
   <div class="banner-content">
-    <h2> Learn more </h2>
+    <h1>About us</h1>
   </div>
 </div>
-<div class='container'>
-  <div class="contact-card">
-    <h1>Animal Lovers Wanted!</h1>
-    <h2>Are you a dog lover with pet care experience? Want to earn money working with dogs? Learn more about becoming a Wag! certified dog walker and sitter in your city.</h2>
-    <h3>
-
-    Wag! co-founder and founding CEO Joshua Viner missed his childhood pet, a Shetland Sheepdog named Brittany. Given his busy schedule as a tech entrepreneur in LA, Joshua was worried about committing to a dog of his own and his family and friends convinced him that it wouldn't be fair. The more he thought about it, though, the more passionate he became about making dog ownership easier for busy people like him.
-
-    Using their background in building consumer tech companies and scaling them to millions of users, Josh and his brother Jon founded Wag! with the mission to make it easier to own a dog. Wag's goal is to be your dog's button on your phone.
-
-    Josh connected with Jason Meltzer, Wag!'s co-founder and Chief Dog Officer, and the founder of Surfdog LA, one of Los Angeles' best loved dog walking services. And the rest is . . . Wag!
-
-    With so many apps to help make our lives easier it’s about time that our furry loved ones have an app for themselves on our phones!
-    </h3>
+  <!-- This container is used to display the About content -->
+  <div id="about" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Animal lovers wanted!</h2>
+        <h4>Are you an animal lover with pet care experience? Do you want to spend some time with a dog/cat or any other pet that you love? Learn more about becoming a PETbnb certified pet sitter in your city. </h4>
+        <p>Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+        <button class="btn btn-default btn-lg">Get in Touch</button>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag "https://images.unsplash.com/photo-1493101561740-e745892775b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b04a762707672f01c7845a06d7839718&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb", class:'image', width: 500 %>
+      </div>
+    </div>
   </div>
-</div>
+  <!-- This container shows the Mission and vision statement -->
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag "https://images.unsplash.com/photo-1513104788547-2c60687081c8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf1d59a51b8764be0988974d3131f36a&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb", class:'image', width:500 %>
+      </div>
+      <div class="col-sm-8">
+        <h2>Our Values</h2>
+        <h4><strong>MISSION:</strong>
+        PetBNB! co-founder and founding CEO Lena missed his childhood pet, a Shetland Sheepdog named Brittany. Given his busy schedule as a tech entrepreneur in Barcelona, Lena was worried about committing to a dog of his own and his family and friends convinced him that it wouldn't be fair. The more he thought about it, though, the more passionate he became about making dog ownership easier for busy people like him.
+
+        Using their background in computer programming and scaling it to millions of users, 4 friends from LeWagin Bootcamp founded PETbnb with the mission to make it easier to own a pet.
+
+        With so many apps to help make our lives easier it’s about time that our furry loved ones have an app for themselves on our phones!</p>
+      </div>
+    </div>
+  </div>
+  <!-- This container showcases the Services offered -->
+  <div id="services" class="container-fluid text-center">
+    <h2>Our values</h2>
+    <h4>What matters to us</h4>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-heart logo-small"></span>
+        <h4>ANIMALS</h4>
+        <p>Before all, we want ALL the animals to be happy, and we now their the happiest when they're in a company of a loving human</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-heart logo-small"></span>
+        <h4>LOVE</h4>
+        <p>We want to connect people, who need some animal love and pets, who need to be looked after when they're owners are busy or away</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-certificate logo-small"></span>
+        <h4>SAFETY</h4>
+        <p>Rest easy knowing your dog is in good care with a certified Wag! pet care professional. Dog walkers and dog sitters on Wag! have passed a rigorous screening process to become Wag! Certified and all Wag! dog care services are bonded and covered by premium pet insurance. </p>
+      </div>
+    </div>
+  </div>
+  <!-- This container is to showcase the portfolio work and customer reviews -->
+  <div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2>Our founders</h2>
+    <h4>Meet the team behind this awesome website</h4>
+    <div class="row text-center">
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <%= image_tag "https://avatars3.githubusercontent.com/u/13423606?v=4", class: "img-circle" %>
+          <p><strong>Lena</strong></p>
+          <p>Russia</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <%= image_tag "https://avatars2.githubusercontent.com/u/19302598?v=4", class: "img-circle" %>
+          <p><strong>Ryan</strong></p>
+          <p>USA</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <%= image_tag "https://avatars3.githubusercontent.com/u/39835470?v=4", class: "img-circle" %>
+          <p><strong>Ali</strong></p>
+          <p>Bahrain</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wy5aa71gepx3jox3bb7a.jpg", class: "img-circle" %>
+          <p><strong>Ania</strong></p>
+          <p>Poland</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>What our customers say</h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <h4>"“Max has been regularly going for fantastic walk with Hannah, a breath of fresh air away from home and was very well looked after. Will be using again and would definitely recommend to other pampered pooch owners. Hassle free and takes the worry out of going away from home even temporarily, and finding somewhere for the dogs.”<br><span style="font-style:normal;">Fraser, Brisbane</span></h4>
+        </div>
+        <div class="item">
+          <h4>“Paulette was a fantastic puppy walker! We know Archie and Bailey are going to miss going to walks with her!! We can’t thank her enough for taking great care of them! The kids ware loving all the photos and videos that Paulette sent us at the end of every week day. We couldn’t ask for someone better and we know.”<br><span style="font-style:normal;">Wendy, Bondi NSW</span></h4>
+        </div>
+        <div class="item">
+          <h4>“Greg looked after our dog Morgan better than I could have imagined. We could not walk Morgan because of our housing conditions at the time, with regular renovations occurring. I not only recommended but insist you use his walking services. Greg is a great and reliable communicator.”<br><span style="font-style:normal;">Alex, St Kilda VIC</span></h4>
+        </div>
+      </div>
+
+      <!-- Left and Right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 
 
