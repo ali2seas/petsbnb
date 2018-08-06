@@ -1,7 +1,6 @@
 .inbox {
   padding-left: 0px;
   list-style: none;
-  border: 1px solid rgba(220,224,244,0.4);
   margin: 0;
   font-size: 13px;
   padding: 0 10px;
@@ -20,7 +19,7 @@
 .booking {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-ar;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   padding: 10px;
   background-color: white;
@@ -77,6 +76,10 @@
   flex-grow: 1;
   padding: 10px;
 }
+.booking-from{
+  width: 100px;
+}
+
 .accepted {
   color: black;
 }
@@ -92,10 +95,14 @@
 .column {
   padding: 10px;
   border-left: 1px solid rgba(220, 224, 244, 0.4);
+}
+.column-right {
   border-right: 1px solid rgba(220, 224, 244, 0.4);
 }
+
 .title {
   padding: 20px;
+  margin: 0;
 
 }
 .side-container {
