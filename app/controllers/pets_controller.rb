@@ -2,12 +2,15 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @pets = policy_scope(Pet)
+    @pets = policy_scope(Pet)
+    @pets = Pet.all
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
     if params[:query].present?
-      @pets = policy_scope(Pet).search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
-    else
-     @pets = policy_scope(Pet).where(category: params[:category])
+      @pets = @pets.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
+    end
+
+    if params[:category]
+     @pets = @pets.where(category: params[:category])
     end
 
     if params[:address].present?
