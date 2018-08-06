@@ -2,9 +2,16 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+
     @pets = policy_scope(Pet)
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
 
+    if params[:query].present?
+      @pets = Pet.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
+    end
+
+
+    # @pets = Pet.where.not(latitude: nil, longitude: nil)
     @markers = @pets.map do |pet|
       {
         lat: pet.latitude,
@@ -13,7 +20,6 @@ class PetsController < ApplicationController
       }
     end
   end
-
 
 
   def show
