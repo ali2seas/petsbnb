@@ -42,7 +42,9 @@
           <p><strong>Category:</strong> <%= @pet.category %></p>
           <p><strong>Age:</strong> <%= @pet.age %></p>
           <p><strong>Size:</strong> <%= @pet.size %></p>
-          <p><strong>Owner:</strong> <%= @pet.user[:first_name] %></p>
+          <% if @pet.user != current_user %>
+          <p><strong>Owner:</strong> <%= link_to @pet.user[:first_name].capitalize, user_path(@pet.user)%></p>
+          <% end %>
         </div>
         <div class="col-md-4 show">
           <p><strong>What <%= @pet.name %> is like:</strong> And now you're back from outer space, / I just walked in to find you here with that sad look upon your face, / I should've changed that stupid lock, I should have made you leave your key, / If I'd have known for just one second you'd be back to bother me. / Go on, now go! Walk out the door...</p>
