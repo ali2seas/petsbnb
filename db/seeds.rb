@@ -42,7 +42,7 @@ user = User.new(
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
-    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4}"
+    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4.sample}"
     )
     pet.remote_photo_url = "https://res.cloudinary.com/dltvtttdn/image/upload/v1533527550/#{number}.jpg"
     pet.save!
@@ -79,7 +79,7 @@ user = User.new(
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
-    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4}"
+    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4.sample}"
     )
     pet.remote_photo_url = "https://res.cloudinary.com/dltvtttdn/image/upload/v1533527550/#{number}.jpg"
     pet.save!
@@ -113,7 +113,7 @@ user = User.new(
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
-    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4}"
+    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4.sample}"
     )
     pet.remote_photo_url = "https://media.mnn.com/assets/images/2017/03/bunny-eating-clover.jpg.696x0_q80_crop-smart.jpg"
     pet.save!
@@ -148,7 +148,7 @@ user = User.new(
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
-    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4}"
+    description: "#{PETS_DESC1.sample}#{PETS_DESC2.sample}#{PETS_DESC3.sample}. Needs to #{PETS_DESC4.sample}"
     )
       pet.remote_photo_url = "https://res.cloudinary.com/dltvtttdn/image/upload/v1533527550/#{number}.jpg"
     pet.save!
