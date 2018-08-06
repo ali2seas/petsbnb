@@ -116,6 +116,12 @@
   size: 24px;
   color: #F96;
 }
+.content_user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .fa-star {
             font-size: 18px;
             margin: 0 1px;
@@ -132,6 +138,13 @@
   border-bottom: 1px solid rgba(220,224,244,0.4);
   padding: 10px;
   background-color: white;
-  margin: 10px;
+  margin: 0 10px;
+  text-align: center;
+}
+.center-container{
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding: 10px;
+  background-color: white;
+  margin: 10px 0;
   text-align: center;
 }

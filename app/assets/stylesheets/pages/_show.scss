@@ -22,7 +22,9 @@
 h2 {
   margin-top: 0;
 }
-
+.show{
+  padding-left: 50px;
+}
 .show h2 {
   color: #F96;
   text-shadow: none;
@@ -51,4 +53,12 @@ h2 {
 
 .card-image {
   border-radius: 5px;
+}
+
+.no-merge {
+  margin: 10px 0;
+}
+
+.list-inline{
+  display: inline-block;
 }
