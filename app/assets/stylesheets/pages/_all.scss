@@ -3,9 +3,13 @@ html, body {
   margin: 0;
 }
 .wrapper {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100% - 70px);
 }
 
 .footer {
   height: 70px;
+}
+
+h3 {
+  color: black;
 }

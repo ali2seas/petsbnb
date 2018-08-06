@@ -1,15 +1,47 @@
-
-<div class="user-background">
 <div class="container">
-  <div class="row user-info">
-    <img src="http://cdn.facesofopensource.com/wp-content/uploads/2017/02/09202215/linus.faces22052.web_.jpg" class="avatar-square">
-    <h2>Hi, I'm <%= @user.first_name %> <%= @user.last_name %></h2>
-    <div class="col-sm-4 user-card">
-      <p><strong>Age</strong> <br> <%= @user.age %></p>
-      <p><strong>Bio</strong>  <br>  <%= @user.description %></p>
+  <div class="col-sm-6 col-md-6 col-md-offset-2">
+    <div class= "side-container center-container">
+      <div class="content_user">
+        <% if @user[:photo]%>
+          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @user.photo, width: 150, gravity: :center %>');"></div>
+        <% else %>
+          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://image.flaticon.com/icons/svg/145/145849.svg');"></div>
+        <% end %>
+        <div>
+          <h3><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h3>
+        </div>
+        <div >
+          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <div><%= link_to 'Edit Info', edit_user_path(@user), class:"btn btn-success button" %></div>
   </div>
-</div>
+  <div class="col-sm-6 col-md-6 col-md-offset-2">
+    <div class= "center-container no-merge">
+      <div class="content_user">
+          <h4 class="no-merge"><%= "Age: #{@user.age}" %>42</h4>
+          <h4><%= @user.description %></h4>
+          <h4>I'm a pet lover</h4>
+          <p><%= @user.email %></p>
+          <%= link_to "Message #{@user.first_name}", edit_user_path(current_user), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6 col-md-offset-2">
+    <div class= "center-container no-merge">
+      <h2 class="title">Reviews</h2>
+      <div class="content_user">
+        <ul class="list-inline">
+          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+          <h4><strong>Very good</strong> Best sitter ever</h4>
+          <h4>Mark</h4>
+        </ul>
+        <ul class="list-inline">
+          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i></div>
+          <h4><strong>Very good</strong> Best sitter ever</h4>
+          <h4>Lucy</h4>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

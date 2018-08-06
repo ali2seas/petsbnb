@@ -3,13 +3,15 @@ class PetsController < ApplicationController
 
   def index
 
-    @pets = Pet.all
+    @pets = policy_scope(Pet)
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
 
     if params[:query].present?
       @pets = Pet.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
     end
 
+
+    # @pets = Pet.where.not(latitude: nil, longitude: nil)
     @markers = @pets.map do |pet|
       {
         lat: pet.latitude,
@@ -20,18 +22,20 @@ class PetsController < ApplicationController
   end
 
 
-
   def show
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def new
     @pet = Pet.new
+    authorize @pet
   end
 
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    authorize @pet
     if @pet.save
       redirect_to dashboard_path
     else
@@ -41,10 +45,12 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def update
     @pet = Pet.find(params[:id])
+    authorize @pet
     if @pet.update(pet_params)
       redirect_to dashboard_path
     else
@@ -54,6 +60,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
+    authorize @pet
     @pet.destroy
     redirect_to dashboard_path
   end

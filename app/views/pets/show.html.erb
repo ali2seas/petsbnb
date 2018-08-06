@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1494947665470-20322015e3a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8e64be3b9dcb29b57f6034eeccc6561e&auto=format&fit=crop&w=1950&q=80');">
   <div class="banner-content">
-    <h2><%= @pet.name %>'s Profile</h2>
+    <h1><%= @pet.name %>'s Profile</h1>
   </div>
 </div>
 
@@ -10,23 +10,77 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-6">
-        <%= image_tag @pet.photo.url %>
+      <div class="col-md-4 card-image" >
+        <div class="slider" data-state="0">
+          <svg id="prev" viewBox="0 0 31 101" version="1.1" class="pfeil prev left"><path d="M 0,0 30,50 0,100"></path></svg>
+          <svg id="next" viewBox="0 0 31 101" version="1.1" class="pfeil next left"><path d="M 0,0 30,50 0,100"></path></svg>
+          <div class="status">
+            <div class="stat" data-key="0"></div>
+            <div class="stat" data-key="1"></div>
+            <div class="stat" data-key="2"></div>
+            <div class="stat" data-key="3"></div>
+            </div>
+            <div class="image" data-key="0" >
+              <%= cl_image_tag @pet.photo.url, crop: :thumb%>
+            </div>
+            <div class="image" data-key="1">
+              <%= image_tag "https://i.imgur.com/Bt6zrhq.jpg", size:"50" %>
+            </div>
+            <div class="image" data-key="2">
+              <%= image_tag "https://i.imgur.com/zMs8Sx6.jpg", size:"50" %>
+            </div>
+            <div class="image" data-key="3">
+              <%= image_tag "https://i.imgur.com/e9aTxh7.jpg", size:"50" %>
+            </div>
+          </div>
       </div>
-      <div class="col-md-6">
-        <h2><%= @pet.name %></h2>
-        <p><strong>Address:</strong> <%= @pet.address %></p>
-        <p><strong>Category:</strong> <%= @pet.category %></p>
-        <p><strong>Age:</strong> <%= @pet.age %></p>
-        <p><strong>Size:</strong> <%= @pet.size %></p>
+        <div class="col-md-8 show">
+          <h2><%= @pet.name %></h2>
+        </div>
+        <div class="col-md-4 show">
+          <p><strong>Address:</strong> <%= @pet.address %></p>
+          <p><strong>Category:</strong> <%= @pet.category %></p>
+          <p><strong>Age:</strong> <%= @pet.age %></p>
+          <p><strong>Size:</strong> <%= @pet.size %></p>
+          <% if @pet.user != current_user %>
+          <p><strong>Owner:</strong> <%= link_to @pet.user[:first_name].capitalize, user_path(@pet.user)%></p>
+          <% end %>
+        </div>
+        <div class="col-md-4 show">
+          <p><strong>What <%= @pet.name %> is like:</strong> And now you're back from outer space, / I just walked in to find you here with that sad look upon your face, / I should've changed that stupid lock, I should have made you leave your key, / If I'd have known for just one second you'd be back to bother me. / Go on, now go! Walk out the door...</p>
+        </div>
+        <div class="col-md-6 box">
+          <% if !policy(@pet).update? %>
+            <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
+          <% end %>
+          <% if policy(@pet).update? %>
+            <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
+          <% end %>
+          <% if policy(@pet).destroy? %>
+            <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% end %>
+          <% if !policy(@pet).update? %>
+            <div><%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %></div>
+          <% end %>
+        </div>
       </div>
-      <div class="col-md-6 box">
-        <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
-        <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
-      </div>
-      <div class="col-md-12 booking-button">
-        <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
-      </div>
+
     </div>
+  <div class="col-md-12 text-center back-link">
+    <% if @pet.previous %>
+      <div class="btn btn-default">
+        <i class="fas fa-arrow-left"></i><%= link_to " Previous pet", pet_path(@pet.previous) %>
+      </div>
+    <% end %>
+    <div class="btn btn-default">
+      <%= link_to "Back to all pets", pets_path %>
+    </div>
+    <% if @pet.next %>
+      <div class="btn btn-default">
+        <%= link_to "Next pet ", pet_path(@pet.next) %><i class="fas fa-arrow-right"></i>
+      </div>
+    <% end %>
+  </div>
 </div>
-</div>
+
+

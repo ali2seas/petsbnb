@@ -1,0 +1,85 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+  transition-property: transform, opacity, filter;
+  transition-duration: 600ms, 600ms, 600ms;
+  transition-timing-function: cubic-bezier(.5, 0, .5, 1);
+}
+.slider {
+  position:relative;
+  display: flex;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  .status {
+    position: absolute;
+    bottom: 10px;
+    left:10px;
+    display:flex;
+    .stat {
+      width:10px;
+      height:10px;
+      background-color:transparent;
+      border-radius:50%;
+      z-index:11;
+      margin: 0px 5px;
+      border: 2px solid #fff;
+    }
+    .stat[data-active] {
+      background-color:#fff;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center 80%;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .image {
+    border-radius: 5px;
+    width: 100%;
+    margin-right: -100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    margin-bottom: 10px;
+    img {
+      transform:scale(.8);
+    }
+  }
+  .image[data-active] {
+    opacity:1;
+    transform: translateX(0);
+    img {
+      transform: scale(1.4);
+    }
+  }
+  .image[data-active] ~.image {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  svg {
+   height: 60px;
+    position:absolute;
+    top:50%;
+    margin-top:-30px;
+    z-index: 1000;
+    cursor: pointer;
+    path {
+      stroke: #fff;
+      stroke-width:3px;
+      fill:transparent;
+    }
+    &#next {
+      right:10px;
+
+    }
+    &#prev {
+      left:10px;
+      transform:rotate(180deg);
+    }
+  }
+}
