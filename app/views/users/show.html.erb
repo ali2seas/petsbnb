@@ -1,47 +1,48 @@
+<div class="user-wraper">
 <div class="container">
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "side-container center-container">
-      <div class="content_user">
+  <div class="profile text-center">
+    <div class="main">
+      <div class="main-content">
         <% if @user[:photo]%>
-          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @user.photo, width: 150, gravity: :center %>');"></div>
+          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @user.photo; %>');"></div>
         <% else %>
           <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://image.flaticon.com/icons/svg/145/145849.svg');"></div>
         <% end %>
-        <div>
-          <h3><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h3>
-        </div>
-        <div >
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
-        </div>
+        <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
+        <p>super pet owner</p>
+        <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+        <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p>Booked</p>
+        <h3>22</h3>
+        <p>times</p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p>Received</p>
+        <h3>7</h3>
+        <p>reviews</p>
+      </div>
+      </div>
+    <div class="stat">
+      <div class="stat-content">
+        <p>Has</p>
+        <h3>2</h3>
+        <p>pets</p>
+      </div>
+      </div>
+    <div class="description">
+      <div class="description-content">
+        <h3>More about <%= @user.first_name %> </h3>
+        <p class="text-justify">
+           As a dog lover and a parent to four lively dogs, there is no doubt in my mind that having these fur babies bring a lot of positivity to my life.  A dog is an animal which I consider as part of my family. Certainly, they’re my bundle of pure joy! There may be times that they produce endless clutters in my house, but hey, I don’t mind. How can I not be happy knowing that these babies love me unconditionally? How can I complain when the very first thing I see every morning is their heart-melting smiles and playfully wagging tails? Definitely, there’s no room for hate.
+        </p>
       </div>
     </div>
   </div>
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "center-container no-merge">
-      <div class="content_user">
-          <h4 class="no-merge"><%= "Age: #{@user.age}" %>42</h4>
-          <h4><%= @user.description %></h4>
-          <h4>I'm a pet lover</h4>
-          <p><%= @user.email %></p>
-          <%= link_to "Message #{@user.first_name}", edit_user_path(current_user), class: 'btn btn-primary' %>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "center-container no-merge">
-      <h2 class="title">Reviews</h2>
-      <div class="content_user">
-        <ul class="list-inline">
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
-          <h4><strong>Very good</strong> Best sitter ever</h4>
-          <h4>Mark</h4>
-        </ul>
-        <ul class="list-inline">
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i></div>
-          <h4><strong>Very good</strong> Best sitter ever</h4>
-          <h4>Lucy</h4>
-        </ul>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
