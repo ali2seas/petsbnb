@@ -48,10 +48,18 @@
           <p><strong>What <%= @pet.name %> is like:</strong> And now you're back from outer space, / I just walked in to find you here with that sad look upon your face, / I should've changed that stupid lock, I should have made you leave your key, / If I'd have known for just one second you'd be back to bother me. / Go on, now go! Walk out the door...</p>
         </div>
         <div class="col-md-6 box">
-          <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
-          <div><%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %></div>
-          <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
-          <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% if !policy(@pet).update? %>
+            <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
+          <% end %>
+          <% if policy(@pet).update? %>
+            <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
+          <% end %>
+          <% if policy(@pet).destroy? %>
+            <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% end %>
+          <% if !policy(@pet).update? %>
+            <div><%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %></div>
+          <% end %>
         </div>
       </div>
 
