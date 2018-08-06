@@ -19,9 +19,10 @@
   <div class="col-sm-6 col-md-6 col-md-offset-2">
     <div class= "center-container no-merge">
       <div class="content_user">
-          <h4 class="no-merge"><%= "Age: #{@user.age}" %></h4>
+          <h4 class="no-merge"><%= "Age: #{@user.age}" %>42</h4>
           <h4><%= @user.description %></h4>
-          <h4><%= @user.email %></h4>
+          <h4>I'm a pet lover</h4>
+          <p><%= @user.email %></p>
           <%= link_to "Message #{@user.first_name}", edit_user_path(current_user), class: 'btn btn-primary' %>
       </div>
     </div>
