@@ -2,7 +2,7 @@
  <div class="banner-content">
   <h1>Welcome to Pets BnB</h1>
    <h3>Book pets near you to sit while their owners are away</h3>
-   <form action="#" class="form-inline">
+<!--    <form action="#" class="form-inline">
     <input type="text" class="form-control input-lg" placeholder="Where?">
     <input type="text" class="form-control input-lg" placeholder="When?">
     <select name="" id="" class="form-control input-lg">
@@ -13,7 +13,23 @@
      <option value="5">Dragon</option>
     </select>
     <a class="btn btn-primary btn-lg" href="/pets/" role="button">Search</a>
-   </form>
+   </form> -->
+   <%= form_tag pets_path, method: :get do %>
+    <%= text_field_tag :address, params[:query],
+    class: "form-control",
+    placeholder: "Find a pet by an address"
+    %>
+    <%= text_field_tag :query, params[:query],
+    class: "form-control",
+    placeholder: "Find a pet by size, age, breed or name"
+    %>
+    <%= select_tag :category, options_for_select(["cat", "dog", "rabbit", "reptile", "other"]),
+    class: "form-control",
+    placeholder: "Find a pet"
+    %>
+    <%= submit_tag "search" %>
+    <% end %>
+
  </div>
 </div>
 <div id="about-home" class="wrapper">
