@@ -17,6 +17,7 @@
     border: none;
     border-radius: 0;
     background: transparent;
+    color: black;
 }
 
 .thumbnail img {
@@ -35,6 +36,7 @@
 .carousel-control.right, .carousel-control.left {
     background-image: none;
     color: #F96;
+    margin-top: 80px;
 }
 
 .carousel-indicators li {
@@ -58,24 +60,23 @@
 }
 
 .panel {
-    border: 1px solid #00e689;
-    border-radius: 0;
+  border-radius: 0;
   transition: box-shadow 0.5s;
 }
 
 .panel:hover {
-    box-shadow: 5px 0px 40px rgb(0,230,137);
+    box-shadow: 5px 0px 40px $orange;
 }
 
 .panel-footer .btn:hover {
-    border: 1px solid #00e689;
+    border: 1px solid $orange;
     background-color: #fff !important;
-    color: #00e689;
+    color: $orange;
 }
 
 .panel-heading {
     color: #fff !important;
-    background-color: #00e689 !important;
+    background-color: $orange !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;

@@ -11,7 +11,6 @@ class Pet < ApplicationRecord
   validates :size, presence: true
   mount_uploader :photo, PhotoUploader
 
-
   def next
     self.class.where("id > ?", id).first
   end
