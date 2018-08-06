@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Welcome to Pets BnB</h1>
      <h3>Book pets near you to sit while their owners are away</h3>
-     <form action="#" class="form-inline">
+     <!-- <form action="#" class="form-inline">
        <input type="text" class="form-control input-lg" placeholder="Where?">
        <input type="text" class="form-control input-lg" placeholder="When?">
        <select name="" id="" class="form-control input-lg">
@@ -12,9 +12,24 @@
          <option value="4">Horse</option>
          <option value="5">Dragon</option>
 
-       </select>
-       <a class="btn btn-primary btn-lg" href="/pets/" role="button">Search</a>
-     </form>
+       </select> -->
+ <!--  <form action="#" class="form-inline" -->
+  <%= form_tag pets_path, method: :get do %>
+  <input type="text" class="form-control input-lg" placeholder="Where?">
+  <%= text_field_tag :query, params[:query],
+  class: "form-control",
+  placeholder: "Find a pet"
+  %>
+  <%= select_tag :category, options_for_select(["cat", "dog", "rabbit", "reptile", "other"]),
+  class: "form-control",
+  placeholder: "Find a pet"
+  %>
+ <%#raise %>
+<%= submit_tag "search" %>
+ <!-- <a class="btn btn-primary btn-lg" href="/pets/" role="button">Search</a> -->
+<% end %>
+
+     <!-- </form> -->
   </div>
 </div>
 
@@ -59,3 +74,24 @@
   </div>
 </div>
 
+<%= form_tag pets_path, method: :get do %>
+  <%= text_field_tag :query,
+  # Replace [:query] to category, wich was chosen
+    params[:query],
+
+    # Looking for params[:query]
+    class: "form-control",
+    placeholder: "Find a pet"
+
+  %>
+    <%= select_tag :category, options_for_select(["cat", "dog", "rabbit", "reptile", "other"]),
+  # Replace [:query] to category, wich was chosen
+    # Looking for params[:query]
+    class: "form-control",
+    placeholder: "Find a pet"
+
+  %>
+ <%#raise %>
+<%= submit_tag "search" %>
+
+<% end %>
