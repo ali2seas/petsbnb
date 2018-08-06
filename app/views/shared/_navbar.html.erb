@@ -5,7 +5,7 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <%= link_to "See our pets", pets_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Meet our pets", pets_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "FAQ", faq_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Contact us", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -13,18 +13,24 @@
   <% if user_signed_in? %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <%= current_user.first_name %>
+        <% if current_user[:photo]%>
+          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path current_user.photo, class:'avatar'%>');"></div>
+          <% else %>
+            <%= image_tag "https://image.flaticon.com/icons/svg/145/145849.svg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
+        <%= current_user.first_name.capitalize %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to dashboard_path(current_user) do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Dashboard") %>
             <% end %>
           </li>
-          <li>
-            <%= link_to new_pet_path do %>
-              <i class="fas fa-plus"></i><%= t(".profile", default: "Add a pet") %>
-          </li>
+          <% if policy(Pet).create? %>
+            <li>
+              <%= link_to new_pet_path do %>
+                <i class="fas fa-plus"></i><%= t(".profile", default: "Add a pet") %>
+                <% end %>
+            </li>
           <% end %>
           <li>
             <%= link_to edit_user_registration_path(current_user) do %>
