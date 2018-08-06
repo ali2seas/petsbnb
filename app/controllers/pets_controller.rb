@@ -2,8 +2,17 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pets = policy_scope(Pet)
+    # @pets = policy_scope(Pet)
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @pets = policy_scope(Pet).search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
+    else
+     @pets = policy_scope(Pet).where(category: params[:category])
+    end
+
+    if params[:address].present?
+      @pets = @pets.where("address ILIKE ?", "%#{params[:address]}%")
+    end
 
     @markers = @pets.map do |pet|
       {
@@ -32,7 +41,7 @@ class PetsController < ApplicationController
     authorize @pet
     if @pet.save
       redirect_to dashboard_path
-    else
+    elses
       render :new
     end
   end
