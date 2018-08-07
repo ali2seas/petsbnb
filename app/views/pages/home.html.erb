@@ -27,7 +27,7 @@
     class: "form-control",
     placeholder: "Find a pet"
     %>
-    <%= submit_tag "search" %>
+    <%= submit_tag "search", class: 'btn btn-primary' %>
     <% end %>
 
  </div>
@@ -55,15 +55,12 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class ='card'>
           <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
-            <div class="card-description">
-              <h2><%= pet.name %> the <%= pet.category %></h2>
-            </div>
-            <%= link_to "", pet_path(pet), class: 'card-link' %>
           </div>
           <div class="card-content">
-            <h4>Playful, cute little dog </h4>
-            <p>And now you're back from outer space, / I just walked in to find you here with that sad look upon your face, / I should've changed that stupid lock, I should have made you leave your key, / If I'd have known for just one second you'd be back to bother me. / Go on, now go! Walk out the door...</p>
+            <h2><%= pet.name %> the <%= pet.category %></h2>
+            <h4> <%= pet.description %> </h4>
           </div>
+          <%= link_to "", pet_path(pet), class: 'card-link' %>
         </div>
       </div>
       <% end %>
