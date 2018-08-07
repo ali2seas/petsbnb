@@ -15,6 +15,7 @@
   color: white;
   position: relative;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .card-description {
@@ -49,13 +50,16 @@
   width: 85%;
   margin: 35px auto;
   text-shadow: none;
+  height: 200px;
+  h2{
+    color: $orange;
+  }
 }
 
-
 .card-content h4 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 0;
-  color: #FF5252;
+  color: black;
 }
 
 .card-content p {
