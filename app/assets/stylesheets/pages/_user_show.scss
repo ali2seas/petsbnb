@@ -114,14 +114,14 @@
   margin: 20px 0 10px 0;
 }
 .side-container {
-  min-height: 511px;
+  height: 511px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .big-container {
-  min-height: 511px;
+  height: 511px;
   width: 100%;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .dashboard-wrapper {
-  padding: 40px;
+  padding: 0 200px;
   color: black;
   h1{
     font-size: 30px;

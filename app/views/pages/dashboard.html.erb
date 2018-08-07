@@ -34,10 +34,11 @@
             <div class="booking-info">
               <div class="pet-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.pet.photo, width: 250, crop: :thumb, gravity: :north %>');"></div>
               <h3 class="bold"><%= booking.pet.name %></h3>
+            <%= link_to "", pet_path(booking.pet), class: 'card-link' %>
             </div>
               <div class="booking-owner column">
               <h4>Owner:</h4>
-              <h3 class="bold orange"><%= booking.pet.user.first_name  %></h3>
+              <%= link_to "#{booking.pet.user.first_name}", user_path(booking.pet.user), class:"orange bold" %>
             </div>
             <div class="booking-start column">
               <h4>Start:</h4>
@@ -52,7 +53,7 @@
               <h3 class="bold pending">Pending</h3>
             </div>
             <div class="booking-changes">
-              <%= link_to "Edit booking", edit_booking_path(booking), class:"btn btn-primary" %>
+              <%= link_to "Edit booking", edit_booking_path(booking), class:"btn btn-success" %>
             </div>
         </li>
       <% end %>
