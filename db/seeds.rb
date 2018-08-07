@@ -12,10 +12,10 @@ require 'open-uri'
 NAME = ["Paul", "Kate", "Ron", "Mike", "Ellen", "Jess", "Frank", "Jarrod", "Diane"]
 LAST_NAME = ["Anderson", "Ashwoon", "Aikin", "Bateman", "Bongard", "Bowers", "Boyd", "Cannon", "Cast", "Deitz", "Dewalt", "Ebner", "Frick", "Hancock", "Haworth", "Hesch", "Hoffman", "Kassing", "Knutson", "Lawless", "Lawicki", "Mccord", "McCormack", "Miller", "Myers", "Nugent", "Ortiz", "Orwig", "Ory", "Paiser", "Pak", "Pettigrew", "Quinn", "Quizoz", "Ramachandran", "Resnick", "Sagar", "Schickowski", "Schiebel", "Sellon", "Severson", "Shaffer", "Solberg", "Soloman", "Sonderling", "Soukup", "Soulis", "Stahl", "Sweeney", "Tandy", "Trebil", "Trusela", "Trussel", "Turco", "Uddin", "Uflan", "Ulrich", "Upson", "Vader", "Vail", "Valente", "Van Zandt", "Vanderpoel", "Ventotla", "Vogal", "Wagle", "Wagner", "Wakefield", "Weinstein", "Weiss", "Woo", "Yang", "Yates", "Yocum", "Zeaser", "Zeller", "Ziegler", "Bauer", "Baxster", "Casal", "Cataldi", "Caswell", "Celedon", "Chambers", "Chapman", "Christensen", "Darnell", "Davidson", "Davis", "DeLorenzo", "Dinkins", "Doran", "Dugelman", "Dugan", "Duffman", "Eastman", "Ferro", "Ferry", "Fletcher", "Fietzer", "Hylan", "Hydinger", "Illingsworth", "Ingram", "Irwin", "Jagtap", "Jenson", "Johnson", "Johnsen", "Jones", "Jurgenson", "Kalleg", "Kaskel", "Keller", "Leisinger", "LePage", "Lewis", "Linde", "Lulloff", "Maki", "Martin", "McGinnis", "Mills", "Moody", "Moore", "Napier", "Nelson", "Norquist", "Nuttle", "Olson", "Ostrander", "Reamer", "Reardon", "Reyes", "Rice", "Ripka", "Roberts", "Rogers", "Root", "Sandstrom", "Sawyer", "Schlicht", "Schmitt", "Schwager", "Schutz", "Schuster", "Tapia", "Thompson", "Tiernan", "Tisler"]
 PET_NAME = ["Aardvark","Albatross","Alligator","Alpaca","Ant","Anteater","Antelope","Ape","Armadillo","Donkey","Baboon","Badger","Barracuda","Bat","Bear","Beaver","Bee","Bison","Boar","Buffalo","Butterfly","Camel","Capybara","Caribou","Cassowary","Cat","Caterpillar","Cattle","Chamois","Cheetah","Chicken","Chimpanzee","Chinchilla","Chough","Clam","Cobra","Cockroach","Cod","Cormorant","Coyote","Crab","Crane","Crocodile","Crow","Curlew","Deer","Dinosaur","Dog","Dogfish"]
-CATEGORY = ["dog", 'cat', "rabbit", "reptile", "other"]
+CATEGORY = ["Dog", 'Cat', "Rabbit", "Reptile", "Other"]
 AGE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 USER_AGE = (18..60).to_a
-SIZE = ["small", "medium", "large"]
+SIZE = ["Small", "Medium", "Large"]
 PETS_DESC1 = ["Beautiful, ", "Friendly, ", "Calm, ", "Energetic, "]
 PETS_DESC2 = ["fun loving ", "obedient ", "well trained ", "snuggle loving "]
 PETS_DESC3 = ["little guy", "real sweetheart", "lovely boy"]
@@ -41,7 +41,7 @@ user = User.new(
     name: PET_NAME.sample,
     #address: Faker::Address.full_address,
     address: ADDRESS.sample,
-    category: "dog",
+    category: "Dog",
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
@@ -78,7 +78,7 @@ user = User.new(
     pet = Pet.new(
     name: PET_NAME.sample,
     address: Faker::Address.full_address,
-    category: "cat",
+    category: "Cat",
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
@@ -113,7 +113,7 @@ user = User.new(
     name: PET_NAME.sample,
     #address: Faker::Address.full_address,
     address: ADDRESS.sample,
-    category: "rabbit",
+    category: "Rabbit",
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
@@ -149,7 +149,7 @@ user = User.new(
     name: PET_NAME.sample,
     #address: Faker::Address.full_address,
     address: ADDRESS.sample,
-    category: "reptile",
+    category: "Reptile",
     age: AGE.sample,
     size: SIZE.sample,
     user_id: User.last.id,
