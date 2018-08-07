@@ -61,15 +61,14 @@
           <%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %>
           <% end %>
         </div>
-        <div class="col-md-2"></div>
-        <div id="available-dates" class="col-md-4" style="display:none">
-      <h4>Enter your preferred dates:</h4>
+        <div id="available-dates" class="col-md-12 text-center" style="display:none">
+        <h4>Enter your preferred dates:</h4>
 
-      <%= simple_form_for [@pet, @booking] do |f| %>
-        <%= f.input :start_date, as: :string %>
-        <%= f.input :end_date, as: :string %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+        <%= simple_form_for [@pet, @booking] do |f| %>
+          <%= f.input :start_date, as: :string %>
+          <%= f.input :end_date, as: :string %>
+          <%= f.button :submit, id: 'create-button', class: 'btn btn-primary' %>
+        <% end %>
       </div>
     </div>
 
