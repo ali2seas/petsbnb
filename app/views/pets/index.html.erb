@@ -10,7 +10,7 @@
     <div class="row row-map">
       <% @pets.each do |pet| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, height: 300, width: 400%>');">
+          <div class="card card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, height: 300, width: 400%>');">
             <div class="card-description">
               <h2><%= pet.name %></h2>
               <p>Category: <%= pet.category %></p>
