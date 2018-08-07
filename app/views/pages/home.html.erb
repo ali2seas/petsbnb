@@ -75,7 +75,7 @@
       <div class="row">
         <% @pets.each do |pet| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class ='card'>
+          <div class ='card homepage-card'>
             <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
               <div class="card-description">
                 <h2><%= pet.name %></h2>
@@ -84,18 +84,15 @@
             </div>
             <div class="card-content text-center">
               <h4 class="orange-header">Meet <%= pet.name %>, one of our <%= pet.category %>s!</h4>
-              <p><%= pet.name %> loves long walks on the beach, special treats, dope rhymes, and hipster things. Feed him kombucha, man buns, and gluten free bread to make <%= pet.name %> happy! Pet sit <%= pet.name %> today and you might never want to give him back! </p>
+              <p><%= pet.name %> loves long walks on the beach, special treats, dope rhymes, and hipster things. Feed him kombucha, man buns, and gluten free bread to make <%= pet.name %> happy! Pet sit <%= pet.name %> today and you might never want to give him back!</p>
             </div>
-          </div>
-        </div>
-        <% end %>
+
       </div>
     </div>
+    <% end %>
     <div id="homepage-button" class="text-center">
      <a class="btn btn-primary btn-lg" href="/pets/" role="button">View More Pets</a>
     </div>
   </div>
 </div>
 </div>
-
-

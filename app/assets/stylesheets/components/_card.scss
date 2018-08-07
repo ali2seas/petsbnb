@@ -15,6 +15,7 @@
   color: white;
   position: relative;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .card-description {
@@ -49,14 +50,21 @@
   width: 85%;
   margin: 35px auto;
   text-shadow: none;
+  height: 200px;
+}
+
+.homepage-card .card-content {
   min-height: 280px;
 }
 
+.orange-header {
+  color: #F96 !important;
+}
 
 .card-content h4 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 0;
-  color: #F96;
+  color: black;
 }
 
 .card-content p {
@@ -64,3 +72,6 @@
   font-size: 15px;
   padding-bottom: 15px;
 }
+
+
+
