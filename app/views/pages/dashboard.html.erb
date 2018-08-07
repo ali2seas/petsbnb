@@ -17,7 +17,7 @@
           <div >
             <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
             <h4><%= current_user.email %></h4>
-            <%= link_to "Update profile", edit_user_registration_path(current_user) %>
+            <%= link_to "Update profile", edit_user_path(current_user) %>
           </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
       <div class="col-sm-9">
         <h2 class="title">Your bookings</h2>
         <% if bookings.size > 0 %>
-        <div class="white-container big-container">
+        <div class="big-container">
         <% bookings.each do |booking|   %>
         <li class="booking">
             <div class="booking-info">
@@ -53,8 +53,7 @@
               <h3 class="bold pending">Pending</h3>
             </div>
             <div class="booking-changes">
-              <%= link_to "Edit booking", edit_booking_path(booking), class:"btn btn-primary" %>
-              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Leave a review</button>
+              <%= link_to "Edit booking", edit_booking_path(booking), class:"btn btn-success" %>
             </div>
         </li>
       <% end %>
@@ -111,7 +110,7 @@
           <div class="fa fa-star on d-inline"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
            <h3 class="d-inline">Higly recommended</h3>
           <p class="d-inline">- Bella</p>
-        </div>
+          </div>
         <div class='rating'>
           <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i></div>
           <h3 class="d-inline">My dog loved <%= current_user.first_name %></h3>
@@ -121,10 +120,9 @@
           <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i><i class="fa fa-star off"></i></div>
           <h3 class="d-inline">Everythink was fine</h3>
           <p class="d-inline">- Ben</p>
+          </div>
         </div>
-      </div>
     </div>
-
 </div>
 </div>
 
