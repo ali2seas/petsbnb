@@ -22,8 +22,10 @@
 
 #contact {
   background:#F9F9F9;
-  padding:25px;
-  margin:50px 0;
+  padding: 25px 60px;
+  margin: 15px auto;
+  border: 1px solid #ddddddb3;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 #contact h3 {
@@ -72,8 +74,6 @@ fieldset {
   cursor:pointer;
   width:100%;
   border:none;
-  background:#0CF;
-  color:#FFF;
   margin:0 0 5px;
   padding:10px;
   font-size:15px;
