@@ -9,6 +9,7 @@
 
 <div class="container">
   <div class="row">
+    <div class="text-center show"><h2><%= @pet.name %></h2></div>
     <div class="col-md-12">
       <div class="col-md-4 card-image" >
         <div class="slider" data-state="0">
@@ -34,9 +35,6 @@
             </div>
           </div>
       </div>
-        <div class="col-md-8 show">
-          <h2><%= @pet.name %></h2>
-        </div>
         <div class="col-md-4 show">
           <p><strong>Address:</strong> <%= @pet.address %></p>
           <p><strong>Category:</strong> <%= @pet.category %></p>
@@ -47,23 +45,35 @@
           <% end %>
         </div>
         <div class="col-md-4 show">
-          <p><strong>What <%= @pet.name %> is like:</strong> And now you're back from outer space, / I just walked in to find you here with that sad look upon your face, / I should've changed that stupid lock, I should have made you leave your key, / If I'd have known for just one second you'd be back to bother me. / Go on, now go! Walk out the door...</p>
+          <p><strong>What <%= @pet.name.capitalize %> is like:</strong> <%= @pet.description %> And now you're back from outer space,  I just walked in to find you here with that sad look upon your face</p>
         </div>
-        <div class="col-md-6 box">
+        <div class="col-md-12 text-center list-inline show-buttons">
           <% if !policy(@pet).update? %>
-            <div><%= link_to "Book #{@pet.name}", new_pet_booking_path(@pet), class:"btn btn-primary button" %></div>
+            <a id= "booking-button" class= "btn btn-primary button" %>Book <%= @pet.name %> </a>
           <% end %>
           <% if policy(@pet).update? %>
-            <div><%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %></div>
+            <%= link_to 'Edit Info', edit_pet_path(@pet), class:"btn btn-success button" %>
           <% end %>
           <% if policy(@pet).destroy? %>
-            <div><%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
           <% if !policy(@pet).update? %>
-            <div><%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %></div>
+          <%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %>
           <% end %>
         </div>
+        <div class="col-md-2"></div>
+        <div id="available-dates" class="col-md-4" style="display:none">
+      <h4>Enter your preferred dates:</h4>
+
+      <%= simple_form_for [@pet, @booking] do |f| %>
+        <%= f.input :start_date, as: :string %>
+        <%= f.input :end_date, as: :string %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
       </div>
+    </div>
+
+
 
     </div>
   <div class="col-md-12 text-center back-link">
@@ -83,4 +93,25 @@
   </div>
 </div>
 
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>

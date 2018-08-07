@@ -3,7 +3,19 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+    @pets = Pet.all
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @pets = @pets.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
+    end
+
+    if params[:category]
+     @pets = @pets.where(category: params[:category])
+    end
+
+    if params[:address].present?
+      @pets = @pets.where("address ILIKE ?", "%#{params[:address]}%")
+    end
 
     @markers = @pets.map do |pet|
       {
@@ -18,6 +30,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @booking = Booking.new
     authorize @pet
   end
 
