@@ -11,7 +11,12 @@ function initMap() {
     } else if (markers.length === 1) {
       map.setCenter(markers[0].lat, markers[0].lng);
       map.setZoom(14);
-    } else {
+    }
+    else if (markers.length === 2) {
+      map.setCenter(markers[0].lat, markers[0].lng);
+      map.setZoom(14);
+    }
+    else {
       map.setZoom(5);
     }
   }
