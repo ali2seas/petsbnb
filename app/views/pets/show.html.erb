@@ -58,7 +58,7 @@
             <%= link_to 'Delete Pet', @pet, class:"btn btn-danger button", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
           <% if !policy(@pet).update? %>
-          <%= link_to "Message #{@pet.name}'s owner", new_pet_booking_path(@pet), class:"btn btn-warning button" %>
+          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Message <%= @pet.name %>'s owner</button>
           <% end %>
         </div>
         <div class="col-md-2"></div>

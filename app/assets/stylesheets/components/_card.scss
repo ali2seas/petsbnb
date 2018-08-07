@@ -6,8 +6,10 @@
   position: relative;
   margin-bottom: 30px;
   background-color: #f4f4f4;
+  transition-property: transform;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3);
 }
+
 .image-card {
   height: 250px;
   background-size: cover !important;
@@ -22,7 +24,8 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  text-shadow: none;
+  text-shadow: 1px 2px 2px gray;
+  color: white;
 }
 
 .card-description h2 {
@@ -38,8 +41,9 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.2;
+.card:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
 .card h2 {
