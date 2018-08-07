@@ -41,7 +41,7 @@ class PetsController < ApplicationController
     authorize @pet
     if @pet.save
       redirect_to dashboard_path
-    elses
+    else
       render :new
     end
   end
