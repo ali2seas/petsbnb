@@ -76,7 +76,7 @@
         <% @pets.each do |pet| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class ='card homepage-card'>
-            <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
+            <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250%>');">
               <div class="card-description">
                 <h2><%= pet.name %></h2>
               </div>

@@ -41,7 +41,7 @@
   background: black;
   opacity: 0;
 }
-.card:hover {
+.card-index:hover {
   opacity: 0.8;
   transform: scale(1.1);
 }
@@ -57,7 +57,7 @@
   height: 200px;
 }
 
-.homepage-card .card-content {
+.card-content {
   min-height: 280px;
 }
 
@@ -75,6 +75,10 @@
   color: #303030;
   font-size: 15px;
   padding-bottom: 15px;
+}
+
+.card-link:hover {
+  opacity: 0.2;
 }
 
 
