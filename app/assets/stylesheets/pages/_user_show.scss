@@ -114,11 +114,15 @@
   margin: 20px 0 10px 0;
 }
 .side-container {
-  height: 511px;
+  min-height: 511px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.big-container {
+  min-height: 511px;
+  width: 100%;
 }
 
 .side-container h3 {

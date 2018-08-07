@@ -28,9 +28,9 @@
       <div class="col-sm-9">
         <h2 class="title">Your bookings</h2>
         <% if bookings.size > 0 %>
-
+        <div class="big-container">
         <% bookings.each do |booking|   %>
-        <li class="booking side-container">
+        <li class="booking">
             <div class="booking-info">
               <div class="pet-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.pet.photo, width: 250, crop: :thumb, gravity: :north %>');"></div>
               <h3 class="bold"><%= booking.pet.name %></h3>
@@ -57,10 +57,11 @@
         </li>
       <% end %>
       <% else %>
-      <li class="booking side-container">
+      <li class="booking">
         <h3>No bookings</h3>
       </li>
       <% end %>
+    </div>
     </div>
   </div>
 
