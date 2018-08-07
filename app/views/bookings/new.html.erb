@@ -10,8 +10,8 @@
       <h3 class="text-center">Enter your prefered dates</h3>
 
       <%= simple_form_for [@pet, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :string %>
+        <%= f.input :end_date, as: :string %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
