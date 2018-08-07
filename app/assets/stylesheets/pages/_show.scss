@@ -24,6 +24,13 @@
 
 #booking-button {
   margin: 20px 30px 20px 0;
+
+}
+
+#create-button {
+  display: inline-flex;
+  margin-top: 30px;
+  padding: 12px;
 }
 
 h2 {
@@ -73,3 +80,9 @@ h2 {
 .description-content {
   padding: 20px 50px;
 }
+
+#new_booking {
+  display: -webkit-inline-box;
+}
+
+
