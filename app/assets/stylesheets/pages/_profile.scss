@@ -1,7 +1,7 @@
 .profile {
   display: grid;
   grid-template-columns: 350px 220px 220px 220px;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 33% 67%;
   height: calc(90vh - 70px);
   padding: 30px;
 }
@@ -43,8 +43,11 @@
   border-radius: 0;
   border: none;
   width: 100%;
-  margin-top: 30px;
   background: #37B686;
+}
+
+.btn-top-margin {
+  margin-top: 30px;
 }
 .profile .btn:hover {
   background: #37B686;
@@ -54,9 +57,11 @@
   color: #37B686;
   font-size: 28px;
 }
-.stat p {
+.stat h5 {
   color: #F96;
   font-size: 19px;
+  margin: 19px 0;
+  font-weight: bold;
 }
 .description h3 {
   color: rgba(0,0,0,0.9);
@@ -70,4 +75,23 @@
 
 .user-wraper {
   vertical-align: center;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
 }
