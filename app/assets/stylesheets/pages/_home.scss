@@ -2,7 +2,19 @@
 #about-home {
   background-color: #f9f9f9;
   text-align: center;
-  padding: 10px 20px 50px 20px;
+  padding: 10px 20px 0 20px;
+}
+
+.form-control {
+  height: 51px;
+}
+
+#home-about, #home-services, #home-pets {
+  padding: 50px 25px;
+}
+
+.wrapper {
+  background-color: #f9f9f9;
 }
 
 #homepage-button {
@@ -15,6 +27,22 @@ padding: 30px;
 
 .homepage h2 {
  color: black;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-light-grey {
+    background-color: #f9f9f9; /* light grey */
+}
+
+.dark-text {
+  color: #6f7072;
+}
+
+.orange-header {
+  color: #F96;
 }
 
 

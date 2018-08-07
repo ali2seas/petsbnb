@@ -6,11 +6,17 @@ class PetsController < ApplicationController
     @pets = Pet.all
     # @pets = Pet.where.not(latitude: nil, longitude: nil)
     if params[:query].present?
-      @pets = @pets.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
+      sql_query = " \
+      pets.size ILIKE :query \
+      OR pets.name ILIKE :query \
+    "
+    @pets = @pets.where(sql_query, query: "%#{params[:query]}%")
+    # @pets = @pets.search_by_name_and_age_category_and_size(params[:query]).where(category: params[:category])
     end
 
     if params[:category]
-     @pets = @pets.where(category: params[:category])
+     # @pets = @pets.where(category: params[:category])
+     @pets = @pets.where("category ILIKE ?", "%#{params[:category]}%")
     end
 
     if params[:address].present?
@@ -25,7 +31,6 @@ class PetsController < ApplicationController
       }
     end
   end
-
 
 
   def show

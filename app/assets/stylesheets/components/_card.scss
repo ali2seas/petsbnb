@@ -6,8 +6,8 @@
   position: relative;
   margin-bottom: 30px;
   background-color: #f4f4f4;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
   transition-property: transform;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3);
 }
 
 .image-card {
@@ -55,9 +55,14 @@
   margin: 35px auto;
   text-shadow: none;
   height: 200px;
-  h2{
-    color: $orange;
-  }
+}
+
+.homepage-card .card-content {
+  min-height: 280px;
+}
+
+.orange-header {
+  color: #F96 !important;
 }
 
 .card-content h4 {
@@ -67,7 +72,10 @@
 }
 
 .card-content p {
-  color: #727272;
-  font-size: 12px;
+  color: #303030;
+  font-size: 15px;
   padding-bottom: 15px;
 }
+
+
+

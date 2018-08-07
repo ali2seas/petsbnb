@@ -14,61 +14,85 @@
     </select>
     <a class="btn btn-primary btn-lg" href="/pets/" role="button">Search</a>
    </form> -->
-   <%= form_tag pets_path, method: :get do %>
+   <%= form_tag pets_path, class:"form-inline", method: :get do %>
     <%= text_field_tag :address, params[:query],
     class: "form-control",
-    placeholder: "Find a pet by an address"
+    placeholder: "Search by location"
     %>
     <%= text_field_tag :query, params[:query],
     class: "form-control",
-    placeholder: "Find a pet by size, age, breed or name"
+    placeholder: "Search by keyword"
     %>
-    <%= select_tag :category, options_for_select(["cat", "dog", "rabbit", "reptile", "other"]),
+    <%= select_tag :category, options_for_select(["Dog", "Cat", "Rabbit", "Reptile", "Other"]),
     class: "form-control",
     placeholder: "Find a pet"
     %>
-    <%= submit_tag "search", class: 'btn btn-primary' %>
+    <%= submit_tag "search", class: "btn btn-primary btn-lg" %>
     <% end %>
 
  </div>
 </div>
-<div id="about-home" class="wrapper">
-  <div class="container">
-    <div class="col-md-offset-1 col-md-10 container">
-      <h2>What is this weird website?</h2>
-       <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
-
-<div class="wrapper">
-  <div id="about-home">
-    <div class="container">
-      <div class="col-md-offset-1 col-md-10 container">
-        <h2 class="homepage">What is this weird website?</h2>
-         <p>Man bun vaporware deep v palo santo selvage raclette tofu direct trade bitters try-hard. Blog flexitarian palo santo, af keffiyeh next level farm-to-table food truck readymade wayfarers before they sold out vaporware. Venmo vegan hexagon asymmetrical. Blog succulents 90's, woke gochujang +1 distillery dreamcatcher truffaut hammock organic green juice. Blue bottle portland polaroid, meh mumblecore kale chips fingerstache hot chicken. Mumblecore keffiyeh narwhal unicorn, typewriter cliche craft beer.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" id="home-pets">
-    <h2 class="text-center homepage">Recent Pets</h2>
+<div class="wrapper bg-light-grey">
+  <div id="home-about" class="container">
     <div class="row">
-      <% @pets.each do |pet| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class ='card'>
-          <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
-          </div>
-          <div class="card-content">
-            <h2><%= pet.name %> the <%= pet.category %></h2>
-            <h4> <%= pet.description %> </h4>
-          </div>
-          <%= link_to "", pet_path(pet), class: 'card-link' %>
-        </div>
+      <div class="col-sm-8">
+        <h2>Animal lovers wanted!</h2>
+        <h4>Are you an animal lover with pet care experience? Do you want to spend some time with a dog/cat or any other pet that you love? Learn more about becoming a PETbnb certified pet sitter in your city. </h4>
+        <h4>Earn money in your free time and help pet owners by taking care of their pet while they are gone. Getting paid cash cash money to play with pets? Dream job... sign up today!</h4>
       </div>
-      <% end %>
+      <div class="col-sm-4">
+        <%= image_tag "https://images.unsplash.com/photo-1493101561740-e745892775b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b04a762707672f01c7845a06d7839718&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb", class:'image', width: 500 %>
+      </div>
     </div>
   </div>
-  <div id="homepage-button" class="text-center">
-   <a class="btn btn-primary btn-lg" href="/pets/" role="button">View More Pets</a>
-  </div>
- </div>
 </div>
+<div class="wrapper bg-white">
+  <div id="home-services" class="container text-center">
+    <h2>Our values</h2>
+    <h4>What matters to us</h4>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-globe logo-small"></span>
+        <h4>EVERY KIND</h4>
+        <p class="dark-text">Before all, we want ALL the animals to be happy, and we now their the happiest when they're in a company of a loving human to give them treats and cuddles</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-heart logo-small"></span>
+        <h4>LOVE</h4>
+        <p class="dark-text">We want to connect people, who need some animal love and pets, who need to be looked after when they're owners are busy or away</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-certificate logo-small"></span>
+        <h4>SAFETY</h4>
+        <p class="dark-text">Rest easy knowing your dog is in good care with a certified PetsBnB pet care professional. All sitters have passed a rigorous screening process</p>
+      </div>
+    </div>
+</div>
+<div class="wrapper bg-light-grey">
+    <div class="container" id="home-pets">
+      <h2 class="text-center homepage">Recent Pets</h2>
+      <div class="row">
+        <% @pets.each do |pet| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class ='card homepage-card'>
+            <div class="image-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, width: 250, crop: :thumb, gravity: :north %>');">
+              <div class="card-description">
+                <h2><%= pet.name %></h2>
+              </div>
+              <%= link_to "", pet_path(pet), class: 'card-link' %>
+            </div>
+            <div class="card-content text-center">
+              <h4 class="orange-header">Meet <%= pet.name %>, one of our <%= pet.category %>s!</h4>
+              <p><%= pet.name %> loves long walks on the beach, special treats, dope rhymes, and hipster things. Feed him kombucha, man buns, and gluten free bread to make <%= pet.name %> happy! Pet sit <%= pet.name %> today and you might never want to give him back!</p>
+            </div>
 
+      </div>
+    </div>
+    <% end %>
+    <div id="homepage-button" class="text-center">
+     <a class="btn btn-primary btn-lg" href="/pets/" role="button">View More Pets</a>
+    </div>
+  </div>
+</div>
+</div>
