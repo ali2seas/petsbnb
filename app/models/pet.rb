@@ -11,6 +11,13 @@ class Pet < ApplicationRecord
   validates :size, presence: true
   mount_uploader :photo, PhotoUploader
 
+  include PgSearch
+  pg_search_scope :search_by_name_and_age_category_and_size,
+    against: [:name, :age, :category, :size, :address],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def next
     self.class.where("id > ?", id).first
   end
