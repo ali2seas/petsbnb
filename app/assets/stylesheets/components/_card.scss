@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 30px;
   background-color: #f4f4f4;
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3);
 }
 .image-card {
   height: 250px;
@@ -49,17 +49,18 @@
   width: 85%;
   margin: 35px auto;
   text-shadow: none;
+  min-height: 280px;
 }
 
 
 .card-content h4 {
   font-size: 24px;
   margin-top: 0;
-  color: #FF5252;
+  color: #F96;
 }
 
 .card-content p {
-  color: #727272;
-  font-size: 12px;
+  color: #303030;
+  font-size: 15px;
   padding-bottom: 15px;
 }
