@@ -1,47 +1,163 @@
+<div class="user-wraper">
 <div class="container">
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "side-container center-container">
-      <div class="content_user">
+  <div class="profile text-center">
+    <div class="main">
+      <div class="main-content">
         <% if @user[:photo]%>
-          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @user.photo, width: 150, gravity: :center %>');"></div>
+          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @user.photo; %>');"></div>
         <% else %>
           <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://image.flaticon.com/icons/svg/145/145849.svg');"></div>
         <% end %>
-        <div>
-          <h3><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h3>
-        </div>
-        <div >
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
-        </div>
+        <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
+        <p>super pet owner</p>
+        <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
+        <a href="#" class="btn btn-primary btn-lg btn-top-margin" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Get in touch</a>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "center-container no-merge">
-      <div class="content_user">
-          <h4 class="no-merge"><%= "Age: #{@user.age}" %>42</h4>
-          <h4><%= @user.description %></h4>
-          <h4>I'm a pet lover</h4>
-          <p><%= @user.email %></p>
-          <%= link_to "Message #{@user.first_name}", edit_user_path(current_user), class: 'btn btn-primary' %>
+    <div class="stat">
+      <div class="stat-content">
+        <h5>Booked</h5>
+        <button type="button" class="btn btn-primary btn-circle btn-xl">9</button>
+        <h5>times</h5>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-6 col-md-offset-2">
-    <div class= "center-container no-merge">
-      <h2 class="title">Reviews</h2>
-      <div class="content_user">
-        <ul class="list-inline">
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star off"></i></div>
-          <h4><strong>Very good</strong> Best sitter ever</h4>
-          <h4>Mark</h4>
-        </ul>
-        <ul class="list-inline">
-          <div class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i><i class="fa fa-star on"></i></div>
-          <h4><strong>Very good</strong> Best sitter ever</h4>
-          <h4>Lucy</h4>
-        </ul>
+    <div class="stat">
+      <div class="stat-content">
+        <h5>Received</h5>
+        <button type="button" class="btn btn-primary btn-circle btn-xl" data-toggle="modal" data-target="#myModal">3</button>
+        <h5>reviews</h5>
+      </div>
+      </div>
+    <div class="stat">
+      <div class="stat-content">
+        <h5>Has</h5>
+        <button type="button" class="btn btn-primary btn-circle btn-xl" data-toggle="modal" data-target=".bs-example-modal-lg">2</button>
+        <h5>pets</h5>
+      </div>
+      </div>
+    <div class="description">
+      <div class="description-content">
+        <h3>More about <%= @user.first_name %> </h3>
+        <p class="text-justify">
+           As a dog lover and a parent to four lively dogs, there is no doubt in my mind that having these fur babies bring a lot of positivity to my life.  A dog is an animal which I consider as part of my family. Certainly, they’re my bundle of pure joy! There may be times that they produce endless clutters in my house, but hey, I don’t mind. How can I not be happy knowing that these babies love me unconditionally? How can I complain when the very first thing I see every morning is their heart-melting smiles and playfully wagging tails? Definitely, there’s no room for hate. <%= @user.age %>
+        </p>
       </div>
     </div>
   </div>
 </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"> 3 Reviews</h4>
+      </div>
+      <div class="modal-body">
+        <div class="stat">
+        <p>
+        I spend two days with <%= @user.first_name %> pet, lovely pet. I had great time and most importantly <%= @user.first_name %> was polite and <strong>professional.</strong>
+        <br />
+        <br />
+        <strong>James.</strong>
+       </p>
+        </div>
+        <div class="stat">
+        <p>
+        Fantastic Dog, Fantastic owner, Fantastic weekend .
+        <br />
+        <br />
+        <strong>Rita.</strong>
+       </p>
+        </div>
+        <div class="stat">
+        <p>
+        Everything was perfect!!, Highly Recomended!!!
+        <br />
+        <br />
+        <strong>Mike.</strong>
+       </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- message form -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">To: @<%= @user.first_name %></label>
+            <!-- <input type="text" class="form-control" id="recipient-name" value="@<%= @user.first_name %>"> -->
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">content:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Large modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= @user.first_name %> Pets</h4>
+      </div>
+      <div class="modal-body">
+      <% @user.pets.each do |pet| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pet.photo, height: 300, width: 400, crop: :fill, gravit: :center %>');">
+            <div class="card-description">
+              <h2><%= pet.name %></h2>
+              <p>Category: <%= pet.category %></p>
+              <p>Age: <%= pet.age %></p>
+              <p>Size: <%= pet.size %></p>
+            </div>
+            <% if policy(pet).show? %>
+              <%= link_to "", pet_path(pet), class: 'card-link' %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+    </div>
+  </div>
+</div>
+
+
+

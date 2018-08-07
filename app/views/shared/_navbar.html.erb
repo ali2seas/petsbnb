@@ -14,7 +14,7 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_user[:photo]%>
-          <div class="avatar-round" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path current_user.photo, class:'avatar'%>');"></div>
+          <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
             <%= image_tag "https://image.flaticon.com/icons/svg/145/145849.svg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
